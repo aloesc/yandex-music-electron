@@ -1,10 +1,11 @@
+
 # Yandex Music Electron
 
 Desktop application for Yandex Music built with Electron.
 
 ---
 
-## Installation from tar.gz
+## Installation from tar.gz (Linux)
 
 1. Extract the archive to `/opt/yandex-music`:
 
@@ -36,15 +37,35 @@ EOF
 
 ---
 
+## Installation on Windows
+
+1. Download the installer `.exe` from the release page.
+2. Run the installer and follow the instructions.
+3. The app will be available in the Start Menu as **Yandex Music**.
+
+---
+
+## Installation on macOS
+
+1. Download the `.dmg` file from the release page.
+2. Open the `.dmg` and drag the **Yandex Music** app to the Applications folder.
+3. Launch the app from Applications or Spotlight.
+
+---
+
 ## Running the app
 
-* To start the app:
+* Linux:
 
 ```bash
 yandex-music
 ```
 
-* To start minimized to the tray:
+* Windows and macOS:
+
+- Launch from Start Menu (Windows) or Applications (macOS).
+
+* To start minimized to the tray (Linux only):
 
 ```bash
 yandex-music --start-minimized
@@ -58,7 +79,8 @@ yandex-music --start-minimized
 * Tray menu with options: "Restore" and "Quit".
 * Double-clicking the tray icon restores the main window.
 * Icon is automatically loaded from multiple possible locations.
-* Supports `--start-minimized` flag to launch minimized.
+* Supports `--start-minimized` flag to launch minimized (Linux).
+* Native installers for Windows and macOS.
 
 ---
 
@@ -70,15 +92,32 @@ Use the following command to build Linux packages (AppImage, tar.gz, deb, rpm):
 npm run build-linux
 ```
 
+For Windows:
+
+```bash
+npm run build -- --win
+```
+
+For macOS:
+
+```bash
+npm run build -- --mac
+```
+
+For all platforms:
+
+```bash
+npm run build-all
+```
+
 ---
 
 ## Requirements
 
-* Linux x64
-* Electron 36.3.1
-* Dependencies for packages: `gtk3`, `libnotify`, `nss`, `libXScrnSaver`, `xdg-utils`, `at-spi2-core`, etc.
+* Linux x64, Windows x64, macOS (Intel/Apple Silicon support depends on Electron version)
+* Electron 28+
+* Linux dependencies: `gtk3`, `libnotify`, `nss`, `libXScrnSaver`, `xdg-utils`, `at-spi2-core`, etc.
 
 ---
 
 Thank you for using the app!
-
