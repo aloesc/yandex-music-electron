@@ -99,7 +99,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request or open an issue on the [GitHub repository](https://github.com/your-repo/yandex-music-electron).
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue on the [GitHub repository](https://github.com/aloesc/yandex-music-electron).
 
 ---
 
