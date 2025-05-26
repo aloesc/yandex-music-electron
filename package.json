@@ -1,0 +1,96 @@
+{
+  "name": "yandex-music-electron",
+  "version": "1.0.0",
+  "description": "Yandex Music Desktop App",
+  "main": "main.js",
+  "homepage": ".",
+  "author": {
+    "name": "aloesc",
+    "email": "aloesc@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "electron . --no-sandbox --disable-gpu-sandbox --disable-software-rasterizer",
+    "start-safe": "electron . --no-sandbox --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage",
+    "dev": "electron . --enable-logging",
+    "build": "electron-builder",
+    "build-linux": "electron-builder --linux",
+    "build-all": "electron-builder --linux --win --mac",
+    "dist": "npm run build",
+    "pack": "electron-builder --dir"
+  },
+  "build": {
+    "appId": "com.yandexmusic.desktop",
+    "productName": "Yandex Music",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      "icon.png",
+      "assets/**/*"
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        },
+        {
+          "target": "tar.gz",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "AudioVideo",
+      "icon": "icon.png",
+      "desktop": {
+        "entry": {
+          "Name": "Yandex Music",
+          "Comment": "Desktop client for Yandex Music",
+          "Categories": "AudioVideo;Audio;Music;Player;",
+          "MimeType": "audio/mpeg;audio/mp4;audio/x-flac;audio/ogg;",
+          "StartupNotify": "true"
+        }
+      }
+    },
+    "deb": {
+      "packageCategory": "sound",
+      "depends": [
+        "libgtk-3-0",
+        "libnotify4",
+        "libnss3",
+        "libxss1",
+        "libxtst6",
+        "xdg-utils",
+        "libatspi2.0-0",
+        "libdrm2",
+        "libxcomposite1",
+        "libxdamage1",
+        "libxrandr2",
+        "libgbm1",
+        "libxkbcommon0",
+        "libasound2"
+      ]
+    },
+    "rpm": {
+      "packageCategory": "AudioVideo"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icon.icns"
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}
