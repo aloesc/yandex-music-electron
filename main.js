@@ -63,13 +63,13 @@ function createTray() {
 
     const contextMenu = Menu.buildFromTemplate([
         {
-            label: 'Восстановить',
+            label: 'Open',
             click: () => {
                 mainWindow.show();
             }
         },
         {
-            label: 'Выход',
+            label: 'Quit',
             click: () => {
                 app.isQuitting = true;
                 app.quit();
@@ -84,7 +84,6 @@ function createTray() {
         mainWindow.show();
     });
 
-    // Дополнительная обработка для двойного клика
     tray.on('double-click', () => {
         mainWindow.show();
     });
