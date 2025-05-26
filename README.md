@@ -1,5 +1,3 @@
-
-````markdown
 # Yandex Music Electron
 
 Desktop application for Yandex Music built with Electron.
@@ -13,7 +11,7 @@ Desktop application for Yandex Music built with Electron.
 ```bash
 sudo mkdir -p /opt/yandex-music
 sudo tar -xzf yandex-music-electron-1.0.0.tar.gz -C /opt/yandex-music
-````
+```
 
 2. Create a symbolic link for easy launching as `yandex-music`:
 
